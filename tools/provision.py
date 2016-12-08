@@ -232,7 +232,7 @@ def main(options):
             run(["tools/do-destroy-rebuild-test-database"])
         else:
             print("No need to regenerate the test DB.")
-        #run(["./manage.py", "compilemessages"])
+        # run(["./manage.py", "compilemessages"])
 
     # Here we install nvm, node, and npm.
     run(["sudo", "tools/setup/install-node"])

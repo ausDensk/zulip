@@ -1594,3 +1594,4 @@ class CrocodileTest(ZulipTestCase):
         self.assertEqual(
             Message.objects.values_list("content", flat=True).get(id=message_id),
             "Hi there")
+        
