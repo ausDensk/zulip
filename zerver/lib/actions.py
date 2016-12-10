@@ -3683,4 +3683,3 @@ def check_attachment_reference_change(prev_content, message):
     to_add = list(new_attachments - prev_attachments)
     if len(to_add) > 0:
         do_claim_attachments(message)
- 
