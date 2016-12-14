@@ -33,9 +33,8 @@ class LinksHandler(object):
         else:
             new_content = original_content.replace('@resource', 'from %s:' % (original_sender,))
         client.send_message(dict(
-            type='stream',
-            to='followup',
-            subject=message['sender_email'],
+            type='private',
+            to=original_sender,
             content=new_content,
         ))
 
