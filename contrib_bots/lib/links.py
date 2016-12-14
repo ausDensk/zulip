@@ -28,7 +28,7 @@ class LinksHandler(object):
     def handle_message(self, message, client, state_handler):
         original_content = message['content']
         original_sender = message['sender_email']
-        if original_content.startsWith('@link'):
+        if original_content.startswith('@link'):
             new_content = original_content.replace('@link', 'from %s:' % (original_sender,))
         else:
             new_content = original_content.replace('@resource', 'from %s:' % (original_sender,))
