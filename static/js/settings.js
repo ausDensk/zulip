@@ -531,13 +531,12 @@ function _setup_page() {
         loading.make_indicator(spinner, {text: 'Uploading avatar.'});
         
         console.log(form_data);
-        channel.put({
+        channel.post({
             url: '/json/users/me/avatar',
-            idemtpotent: true,
             data: form_data,
             cache: false,
             processData: false,
-            contentType: "application/x-www-form-urlencoded",
+            contentType: false,
             success: function (data) {
                 loading.destroy_indicator($("#upload_avatar_spinner"));
                 var url = data.avatar_url + '&stamp=' + exports.avatar_stamp;
