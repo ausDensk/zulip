@@ -240,7 +240,7 @@ v1_api_and_json_patterns = [
     url(r'^users/me/enter-sends$', rest_dispatch,
         {'POST': 'zerver.views.user_settings.change_enter_sends'}),
     url(r'^users/me/avatar$', rest_dispatch,
-        {'POST': 'zerver.views.user_settings.json_set_avatar'}),
+        {'PUT': 'zerver.views.user_settings.json_set_avatar'}),
 
     # users/me/alert_words -> zerver.views.alert_words
     url(r'^users/me/alert_words$', rest_dispatch,
