@@ -529,13 +529,15 @@ function _setup_page() {
 
         var spinner = $("#upload_avatar_spinner").expectOne();
         loading.make_indicator(spinner, {text: 'Uploading avatar.'});
-
+        
+        console.log(form_data);
         channel.put({
             url: '/json/users/me/avatar',
+            idemtpotent: true,
             data: form_data,
             cache: false,
             processData: false,
-            contentType: false,
+            contentType: "application/x-www-form-urlencoded",
             success: function (data) {
                 loading.destroy_indicator($("#upload_avatar_spinner"));
                 var url = data.avatar_url + '&stamp=' + exports.avatar_stamp;
