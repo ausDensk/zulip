@@ -531,7 +531,7 @@ function _setup_page() {
         loading.make_indicator(spinner, {text: 'Uploading avatar.'});
 
         channel.put({
-            url: '/users/me/avatar',
+            url: '/json/users/me/avatar',
             data: form_data,
             cache: false,
             processData: false,
