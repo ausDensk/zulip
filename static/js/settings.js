@@ -531,7 +531,7 @@ function _setup_page() {
         loading.make_indicator(spinner, {text: 'Uploading avatar.'});
         
         console.log(form_data);
-        channel.put({
+        channel.post({
             url:      '/json/users/me/avatar',
             cache: false,
             processData: false,
@@ -539,9 +539,9 @@ function _setup_page() {
             data:     form_data,
             success: function () {
                 loading.destroy_indicator($("#upload_avatar_spinner"));
-                /*var url = data.avatar_url + '&stamp=' + exports.avatar_stamp;
+                var url = data.avatar_url + '&stamp=' + exports.avatar_stamp;
                 $("#user-settings-avatar").expectOne().attr("src", url);
-                exports.avatar_stamp += 1;*/
+                exports.avatar_stamp += 1;
             }
         });
     }
