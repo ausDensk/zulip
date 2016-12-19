@@ -531,7 +531,7 @@ function _setup_page() {
         loading.make_indicator(spinner, {text: 'Uploading avatar.'});
         
         console.log(form_data);
-        channel.put({
+        /*channel.put({
             url:      '/json/users/me/avatar',
             idempotent: true,
             data:     form_data,
@@ -541,7 +541,7 @@ function _setup_page() {
                 $("#user-settings-avatar").expectOne().attr("src", url);
                 exports.avatar_stamp += 1;
             }
-        });
+        });*/
     }
 
     avatar.build_user_avatar_widget(upload_avatar);
