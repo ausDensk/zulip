@@ -530,13 +530,11 @@ function _setup_page() {
         var spinner = $("#upload_avatar_spinner").expectOne();
         loading.make_indicator(spinner, {text: 'Uploading avatar.'});
         
-        alert(form_data);
-        channel.put({
-            url: '/json/users/me/avatar',
-            data: form_data,
-            cache: false,
-            processData: false,
-            contentType: false,
+        console.log(form_data);
+        return channel.put({
+            url:      '/json/users/me/avatar',
+            idempotent: true,
+            data:     form_data,
             success: function (data) {
                 loading.destroy_indicator($("#upload_avatar_spinner"));
                 var url = data.avatar_url + '&stamp=' + exports.avatar_stamp;
@@ -544,7 +542,6 @@ function _setup_page() {
                 exports.avatar_stamp += 1;
             }
         });
-
     }
 
     avatar.build_user_avatar_widget(upload_avatar);
