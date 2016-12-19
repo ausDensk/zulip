@@ -534,7 +534,7 @@ function _setup_page() {
         channel.put({
             url:      '/json/users/me/avatar',
             idempotent: true,
-            data:     form_data,
+            data:     "form_data",
             success: function () {
                 loading.destroy_indicator($("#upload_avatar_spinner"));
                 /*var url = data.avatar_url + '&stamp=' + exports.avatar_stamp;
