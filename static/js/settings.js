@@ -528,6 +528,8 @@ function _setup_page() {
         });
 
         var spinner = $("#upload_avatar_spinner").expectOne();
+        var old_url = form_data.avatar_url + '&stamp=' + exports.avatar_stamp;
+        console.log(old_url)
         loading.make_indicator(spinner, {text: 'Uploading avatar.'});
         console.log(form_data);
         channel.post({
@@ -539,6 +541,7 @@ function _setup_page() {
             success: function (data) {
                 loading.destroy_indicator($("#upload_avatar_spinner"));
                 var url = data.avatar_url + '&stamp=' + exports.avatar_stamp;
+                console.log(url);
                 $("#user-settings-avatar").expectOne().attr("src", url);
                 exports.avatar_stamp += 1;
             }
