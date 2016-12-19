@@ -537,7 +537,7 @@ function _setup_page() {
             processData: false,
             contentType: false,
             data:     form_data,
-            success: function () {
+            success: function (data) {
                 loading.destroy_indicator($("#upload_avatar_spinner"));
                 var url = data.avatar_url + '&stamp=' + exports.avatar_stamp;
                 $("#user-settings-avatar").expectOne().attr("src", url);
