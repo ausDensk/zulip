@@ -44,6 +44,7 @@ def rest_dispatch(request, **kwargs):
 
     # duplicate kwargs so we can mutate the original as we go
     for arg in list(kwargs):
+        print(kwargs[arg])
         if arg in METHODS:
             supported_methods[arg] = kwargs[arg]
             del kwargs[arg]
