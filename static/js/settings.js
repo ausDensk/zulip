@@ -530,7 +530,7 @@ function _setup_page() {
         var spinner = $("#upload_avatar_spinner").expectOne();
         loading.make_indicator(spinner, {text: 'Uploading avatar.'});
         
-        console.log(form_data);
+        alert(form_data);
         channel.put({
             url: '/json/users/me/avatar',
             data: form_data,
