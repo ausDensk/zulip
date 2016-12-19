@@ -202,6 +202,8 @@ def json_change_notify_settings(request, user_profile,
 @authenticated_json_post_view
 def json_set_avatar(request, user_profile):
     # type: (HttpRequest, UserProfile) -> HttpResponse
+    print(request)
+    print(user_profile)
     if len(request.FILES) != 1:
         return json_error(_("You must upload exactly one avatar."))
 
