@@ -535,9 +535,8 @@ function _setup_page() {
             url:      '/json/users/me/avatar',
             idempotent: true,
             data:     form_data,
-            success: function (data) {
+            success: function () {
                 loading.destroy_indicator($("#upload_avatar_spinner"));
-                console.log(data);
                 /*var url = data.avatar_url + '&stamp=' + exports.avatar_stamp;
                 $("#user-settings-avatar").expectOne().attr("src", url);
                 exports.avatar_stamp += 1;*/
