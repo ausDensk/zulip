@@ -17,9 +17,9 @@ def api_homeassistant_webhook(request, user_profile, client,
                            stream=REQ(default='test'),
                            topic=REQ(default='Home Assistant')):
     # type: (HttpRequest, UserProfile, Client, Dict[str, Iterable[Dict[str, Any]]], Text, Optional[Text]) -> HttpResponse
-    print(payload["message"])
+    print(request.GET.urlencode())
     try:
-        body = str(payload["message"])
+        body = str(payload)
     except KeyError as e:
         print("Irgendwas laeuft nicht")
         return json_error(_("Missing key {} in JSON").format(str(e)))
