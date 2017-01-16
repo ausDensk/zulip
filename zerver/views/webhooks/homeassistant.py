@@ -17,7 +17,7 @@ def api_homeassistant_webhook(request, user_profile, client,
                            stream=REQ(default='test'),
                            topic=REQ(default='Home Assistant')):
     # type: (HttpRequest, UserProfile, Client, Dict[str, Iterable[Dict[str, Any]]], Text, Optional[Text]) -> HttpResponse
-    print(payload)
+    print(payload["message"])
     try:
         body = str(payload["message"])
     except KeyError as e:
